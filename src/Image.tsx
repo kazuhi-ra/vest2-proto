@@ -8,5 +8,5 @@ const Image: FC<Props> = ({ src }) => {
   return <div>{src}</div>
 }
 
-// export default React.memo(Image)
-export default Image
+export default React.memo(Image)
+// export default Image

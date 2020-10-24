@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 
 import Image from 'Image'
 
@@ -25,7 +25,7 @@ const App = () => {
     footId,
   ])
 
-  const start = () => {
+  const start = useCallback(() => {
     if (isPlaying) return
 
     setPanelsLeft(3)
@@ -50,9 +50,9 @@ const App = () => {
         setFoot(footsLength)
       }, 100)
     )
-  }
+  }, [isPlaying])
 
-  const stop = (
+  const stop = useCallback((
     intervalID: intervalID,
     setId: React.Dispatch<React.SetStateAction<intervalID>>
   ) => {
@@ -67,7 +67,7 @@ const App = () => {
     if (panelsLeft === 1 && isFirstTime === true) {
       setFirstTime(false)
     }
-  }
+  }, [isFirstTime, isPlaying, panelsLeft])
 
   return (
     <div className='wrapper'>
