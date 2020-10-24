@@ -6,9 +6,11 @@ const heads = ['頭1', '頭2', '頭3', '頭4']
 const vests = ['胴1', '胴2', '胴3', '胴4']
 const foots = ['脚1', '脚2', '脚3', '脚4']
 
+const INTERVAL = 100
 type intervalID = null | NodeJS.Timeout
 
 const App = () => {
+  console.log('App')
   const [head, setHead] = useState(0)
   const [vest, setVest] = useState(0)
   const [foot, setFoot] = useState(0)
@@ -34,21 +36,21 @@ const App = () => {
       setInterval(() => {
         const headsLength = Math.floor(Math.random() * heads.length)
         setHead(headsLength)
-      }, 100)
+      }, INTERVAL)
     )
 
     setVestId(
       setInterval(() => {
         const vestsLength = Math.floor(Math.random() * vests.length)
         setVest(vestsLength)
-      }, 100)
+      }, INTERVAL)
     )
 
     setFootId(
       setInterval(() => {
         const footsLength = Math.floor(Math.random() * foots.length)
         setFoot(footsLength)
-      }, 100)
+      }, INTERVAL)
     )
   }, [isPlaying])
 
@@ -91,4 +93,5 @@ const App = () => {
   )
 }
 
-export default App
+export default React.memo(App)
+// export default App
