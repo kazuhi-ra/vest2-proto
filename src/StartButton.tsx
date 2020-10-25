@@ -2,12 +2,17 @@ import React, { FC } from 'react'
 
 type Props = {
   start: () => void
+  isPlaying: boolean
 }
 
-const StartButton: FC<Props> = ({ start }) => {
+const StartButton: FC<Props> = ({ start, isPlaying }) => {
   console.log('StartButton')
   return (
-    <div onClick={() => start()}>START</div>
+    !isPlaying ? (
+      <div onClick={() => start()}>START</div>
+    ) : (
+      <div>START(inActive)</div>
+    )
   )
 }
 

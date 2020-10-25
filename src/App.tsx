@@ -89,7 +89,7 @@ const App = () => {
         <StopButton intervalId={footId} setIntervalId={setFootId} stop={stop} />
       </div>
       {isFirstTime ? (
-        <StartButton start={start} />
+        <StartButton start={start} isPlaying={isPlaying} />
       ) : (
         <div className='shareWrapper'>
           <OnceAgainButton start={start} />
