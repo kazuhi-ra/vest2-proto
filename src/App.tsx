@@ -4,12 +4,13 @@ import Images from 'Images'
 import StopButton from 'StopButton'
 import StartButton from 'StartButton'
 import OnceAgainButton from 'OnceAgainButton'
+import TwitterShareButton from 'TwitterShareButton'
 
 const heads = ['頭1', '頭2', '頭3', '頭4', '頭5', '頭6', '頭7']
 const vests = ['胴1', '胴2', '胴3', '胴4', '胴5', '胴6', '胴7']
 const foots = ['脚1', '脚2', '脚3', '脚4', '脚5', '脚6', '脚7']
 
-const INTERVAL = 200
+const INTERVAL = 20
 export type IntervalID = null | NodeJS.Timeout
 export type SetId = React.Dispatch<React.SetStateAction<IntervalID>>
 
@@ -92,7 +93,7 @@ const App = () => {
       ) : (
         <div className='shareWrapper'>
           <OnceAgainButton start={start} />
-          <div>これにする</div>
+          <TwitterShareButton />
         </div>
       )}
     </div>
