@@ -104,20 +104,22 @@ const App = () => {
           isPlaying={isPlaying}
         />
       </ButtonsWrapper>
-      {isFirstTime ? (
-        <StartButton start={start} isPlaying={isPlaying} />
-      ) : (
-        <div className='shareWrapper'>
-          <OnceAgainButton start={start} isPlaying={isPlaying} />
-          <TwitterShareButton isPlaying={isPlaying} />
-        </div>
-      )}
+      <ButtonsWrapper>
+        {isFirstTime ? (
+          <StartButton start={start} isPlaying={isPlaying} />
+        ) : (
+          <div className='shareWrapper'>
+            <OnceAgainButton start={start} isPlaying={isPlaying} />
+            <TwitterShareButton isPlaying={isPlaying} />
+          </div>
+        )}
+      </ButtonsWrapper>
     </div>
   )
 }
 
 const ButtonsWrapper = styled('div')`
-  background-color: #abab;
+  /* background-color: #abab; */
   width: 300px;
   margin: 0 auto 20px;
   display: flex;
