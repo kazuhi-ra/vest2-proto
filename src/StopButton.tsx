@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import styled from '@emotion/styled'
+
 import { IntervalID, SetId } from 'App'
 
 type Props = {
@@ -16,10 +18,51 @@ const StopButton: FC<Props> = ({
 }) => {
   console.log('StopButton')
   return isPlaying && intervalId === null ? (
-    <div>STOP(inActive)</div>
+    <StopButtonInactive>STOP</StopButtonInactive>
   ) : (
-    <div onClick={() => stop(intervalId, setIntervalId)}>STOP</div>
+    <StopButtonActive onClick={() => stop(intervalId, setIntervalId)}>
+      STOP
+    </StopButtonActive>
   )
 }
+
+const StopButtonActive = styled('button')`
+  margin: 0 auto 4px auto;
+  cursor: pointer;
+  width: 56px;
+  height: 50px;
+  background-color: #ef454a;
+  box-shadow: 0 4px 0 #bb4038;
+  border-radius: 26px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  user-select: none;
+
+  &:active {
+    margin-top: 4px;
+    margin-bottom: 0;
+    box-shadow: none;
+  }
+`
+
+const StopButtonInactive = styled('button')`
+  margin: 0 auto 4px auto;
+  cursor: pointer;
+  width: 56px;
+  height: 50px;
+  background-color: #ef454a;
+  box-shadow: 0 4px 0 #bb4038;
+  border-radius: 26px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  user-select: none;
+  opacity: 0.85;
+  pointer-events: none;
+  cursor: default;
+`
 
 export default React.memo(StopButton)
