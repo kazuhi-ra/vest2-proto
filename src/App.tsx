@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react'
+import styled from '@emotion/styled'
 
 import Images from 'Images'
 import StopButton from 'StopButton'
@@ -10,7 +11,7 @@ const heads = ['h1', 'h2', 'h3']
 const vests = ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9']
 const foots = ['p1', 'p2', 'p3', 'p4', 'p5']
 
-const INTERVAL = 20
+const INTERVAL = 1000
 export type IntervalID = null | NodeJS.Timeout
 export type SetId = React.Dispatch<React.SetStateAction<IntervalID>>
 
@@ -83,7 +84,7 @@ const App = () => {
         vestSrc={vests[vest]}
         footSrc={foots[foot]}
       />
-      <div className='buttonWrapper'>
+      <ButtonsWrapper>
         <StopButton
           intervalId={headId}
           setIntervalId={setHeadId}
@@ -102,7 +103,7 @@ const App = () => {
           stop={stop}
           isPlaying={isPlaying}
         />
-      </div>
+      </ButtonsWrapper>
       {isFirstTime ? (
         <StartButton start={start} isPlaying={isPlaying} />
       ) : (
@@ -114,6 +115,14 @@ const App = () => {
     </div>
   )
 }
+
+const ButtonsWrapper = styled('div')`
+  background-color: #abab;
+  width: 300px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-direction: row;
+`
 
 // export default React.memo(App)
 export default App
