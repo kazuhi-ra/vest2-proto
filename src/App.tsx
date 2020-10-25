@@ -1,12 +1,12 @@
 import React, { useState, useMemo, useCallback } from 'react'
 
-import Image from 'Image'
+import Images from 'Images'
 
-const heads = ['頭1', '頭2', '頭3', '頭4']
-const vests = ['胴1', '胴2', '胴3', '胴4']
-const foots = ['脚1', '脚2', '脚3', '脚4']
+const heads = ['頭1', '頭2', '頭3', '頭4', '頭5', '頭6', '頭7']
+const vests = ['胴1', '胴2', '胴3', '胴4', '胴5', '胴6', '胴7']
+const foots = ['脚1', '脚2', '脚3', '脚4', '脚5', '脚6', '脚7']
 
-const INTERVAL = 100
+const INTERVAL = 2000
 type intervalID = null | NodeJS.Timeout
 
 const App = () => {
@@ -73,11 +73,11 @@ const App = () => {
 
   return (
     <div className='wrapper'>
-      <div>
-        <Image src={heads[head]} />
-        <Image src={vests[vest]} />
-        <Image src={foots[foot]} />
-      </div>
+      <Images
+        headSrc={heads[head]}
+        vestSrc={vests[vest]}
+        footSrc={foots[foot]}
+      />
       <div className='buttonWrapper'>
         <div onClick={() => stop(headId, setHeadId)}>STOP</div>
         <div onClick={() => stop(vestId, setVestId)}>STOP</div>
@@ -93,5 +93,5 @@ const App = () => {
   )
 }
 
-export default React.memo(App)
-// export default App
+// export default React.memo(App)
+export default App
