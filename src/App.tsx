@@ -6,9 +6,9 @@ import StartButton from 'StartButton'
 import OnceAgainButton from 'OnceAgainButton'
 import TwitterShareButton from 'TwitterShareButton'
 
-const heads = ['頭1', '頭2', '頭3', '頭4', '頭5', '頭6', '頭7']
-const vests = ['胴1', '胴2', '胴3', '胴4', '胴5', '胴6', '胴7']
-const foots = ['脚1', '脚2', '脚3', '脚4', '脚5', '脚6', '脚7']
+const heads = ['h1', 'h2', 'h3']
+const vests = ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9']
+const foots = ['p1', 'p2', 'p3', 'p4', 'p5']
 
 const INTERVAL = 20
 export type IntervalID = null | NodeJS.Timeout
@@ -84,9 +84,24 @@ const App = () => {
         footSrc={foots[foot]}
       />
       <div className='buttonWrapper'>
-        <StopButton intervalId={headId} setIntervalId={setHeadId} stop={stop} isPlaying={isPlaying} />
-        <StopButton intervalId={vestId} setIntervalId={setVestId} stop={stop} isPlaying={isPlaying} />
-        <StopButton intervalId={footId} setIntervalId={setFootId} stop={stop} isPlaying={isPlaying} />
+        <StopButton
+          intervalId={headId}
+          setIntervalId={setHeadId}
+          stop={stop}
+          isPlaying={isPlaying}
+        />
+        <StopButton
+          intervalId={vestId}
+          setIntervalId={setVestId}
+          stop={stop}
+          isPlaying={isPlaying}
+        />
+        <StopButton
+          intervalId={footId}
+          setIntervalId={setFootId}
+          stop={stop}
+          isPlaying={isPlaying}
+        />
       </div>
       {isFirstTime ? (
         <StartButton start={start} isPlaying={isPlaying} />
