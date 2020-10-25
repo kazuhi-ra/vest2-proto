@@ -2,12 +2,15 @@ import React, { FC } from 'react'
 
 type Props = {
   start: () => void
+  isPlaying: boolean
 }
 
-const OnceAgainButton: FC<Props> = ({ start }) => {
+const OnceAgainButton: FC<Props> = ({ start, isPlaying }) => {
   console.log('OnceAgainButton')
-  return (
+  return !isPlaying ? (
     <div onClick={() => start()}>もう一度</div>
+  ) : (
+    <div>もう一度(inActive)</div>
   )
 }
 
