@@ -5,11 +5,21 @@ type Props = {
   intervalId: IntervalID
   setIntervalId: SetId
   stop: (intervalId: IntervalID, setIntervalId: SetId) => void
+  isPlaying: boolean
 }
 
-const StopButton: FC<Props> = ({ intervalId, setIntervalId, stop }) => {
+const StopButton: FC<Props> = ({
+  intervalId,
+  setIntervalId,
+  stop,
+  isPlaying,
+}) => {
   console.log('StopButton')
-  return <div onClick={() => stop(intervalId, setIntervalId)}>STOP</div>
+  return isPlaying && intervalId === null ? (
+    <div>STOP(inActive)</div>
+  ) : (
+    <div onClick={() => stop(intervalId, setIntervalId)}>STOP</div>
+  )
 }
 
 export default React.memo(StopButton)

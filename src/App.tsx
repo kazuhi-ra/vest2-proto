@@ -84,9 +84,9 @@ const App = () => {
         footSrc={foots[foot]}
       />
       <div className='buttonWrapper'>
-        <StopButton intervalId={headId} setIntervalId={setHeadId} stop={stop} />
-        <StopButton intervalId={vestId} setIntervalId={setVestId} stop={stop} />
-        <StopButton intervalId={footId} setIntervalId={setFootId} stop={stop} />
+        <StopButton intervalId={headId} setIntervalId={setHeadId} stop={stop} isPlaying={isPlaying} />
+        <StopButton intervalId={vestId} setIntervalId={setVestId} stop={stop} isPlaying={isPlaying} />
+        <StopButton intervalId={footId} setIntervalId={setFootId} stop={stop} isPlaying={isPlaying} />
       </div>
       {isFirstTime ? (
         <StartButton start={start} isPlaying={isPlaying} />
