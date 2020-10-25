@@ -92,8 +92,8 @@ const App = () => {
         <StartButton start={start} isPlaying={isPlaying} />
       ) : (
         <div className='shareWrapper'>
-          <OnceAgainButton start={start} />
-          <TwitterShareButton />
+          <OnceAgainButton start={start} isPlaying={isPlaying} />
+          <TwitterShareButton isPlaying={isPlaying} />
         </div>
       )}
     </div>
