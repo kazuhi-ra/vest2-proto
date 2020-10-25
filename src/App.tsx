@@ -2,6 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react'
 
 import Images from 'Images'
 import StopButton from 'StopButton'
+import StartButton from 'StartButton'
 
 const heads = ['頭1', '頭2', '頭3', '頭4', '頭5', '頭6', '頭7']
 const vests = ['胴1', '胴2', '胴3', '胴4', '胴5', '胴6', '胴7']
@@ -86,7 +87,7 @@ const App = () => {
         <StopButton intervalId={footId} setIntervalId={setFootId} stop={stop} />
       </div>
       {isFirstTime ? (
-        <div onClick={() => start()}>START</div>
+        <StartButton start={start} />
       ) : (
         <div className='shareWrapper'>
           <div onClick={() => start()}>もう一度</div>
