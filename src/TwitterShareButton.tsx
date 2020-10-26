@@ -3,12 +3,23 @@ import styled from '@emotion/styled'
 
 type Props = {
   isPlaying: boolean
+  head: number
+  vest: number
+  foot: number
 }
 
-const TwitterShareButton: FC<Props> = ({ isPlaying }) => {
-  console.log('TwitterShareButton')
+const TwitterShareButton: FC<Props> = ({ isPlaying, head, vest, foot }) => {
+  const pageId = `${head + 1}${vest + 1}${foot + 1}`
+
   return !isPlaying ? (
-    <TwitterShareButtonActive>これにする</TwitterShareButtonActive>
+    <TwitterShareButtonActive>
+      <StyledA
+        href={`http://twitter.com/share?url=https://ashitano.herokuapp.com/vest/${pageId}&text=@kazuhi_ra あしたのベストはこれです&hashtags=あしたのベスト`}
+        target='_blank'
+      >
+        これにする
+      </StyledA>
+    </TwitterShareButtonActive>
   ) : (
     <TwitterShareButtonInactive>これにする</TwitterShareButtonInactive>
   )
@@ -36,6 +47,11 @@ const TwitterShareButtonActive = styled('button')`
   }
 `
 
+const StyledA = styled('a')`
+  color: #ffffff;
+  text-decoration: none;
+`
+
 const TwitterShareButtonInactive = styled('button')`
   color: #dedede;
   cursor: pointer;
@@ -57,4 +73,6 @@ const TwitterShareButtonInactive = styled('button')`
   cursor: default;
 `
 
-export default React.memo(TwitterShareButton)
+export default React.memo(TwitterShareButton, (prev, next) => {
+  return next.isPlaying === true
+})
