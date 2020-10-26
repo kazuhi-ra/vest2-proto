@@ -7,9 +7,10 @@ type Props = {
   headSrc: string
   vestSrc: string
   footSrc: string
+  panelsLeft: number
 }
 
-const Images: FC<Props> = ({ headSrc, vestSrc, footSrc }) => {
+const Images: FC<Props> = ({ headSrc, vestSrc, footSrc, panelsLeft }) => {
   return (
     <ImageWrapper>
       <Image src={headSrc} imgHeight={120} />
@@ -27,5 +28,8 @@ const ImageWrapper = styled('div')`
   margin-bottom: 12px;
 `
 
-export default Images
-// export default React.memo(Images)
+let i = 0
+export default React.memo(Images, (prev, next) => {
+  i++
+  return prev.panelsLeft !== 0 && i % prev.panelsLeft !== 0
+})

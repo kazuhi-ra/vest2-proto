@@ -82,6 +82,7 @@ const Roulette = () => {
         headSrc={heads[head]}
         vestSrc={vests[vest]}
         footSrc={foots[foot]}
+        panelsLeft={panelsLeft}
       />
       <ButtonsWrapper>
         <StopButton
