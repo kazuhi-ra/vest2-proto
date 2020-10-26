@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled from '@emotion/styled'
 
-import { IntervalID, SetId } from 'App'
+import { IntervalID, SetId } from 'Roulette'
 
 type Props = {
   intervalId: IntervalID

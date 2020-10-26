@@ -23,9 +23,8 @@ const ImageWrapper = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #baba;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 `
 
 export default Images

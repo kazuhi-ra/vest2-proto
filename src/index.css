@@ -24,13 +24,6 @@ button{
   appearance: none;
 }
 
-
-.wrapper {
-  width: 90%;
-  margin: 10px auto;
-  background-color: aliceblue;
-}
-
 .buttonWrapper {
   display: flex;
 }
