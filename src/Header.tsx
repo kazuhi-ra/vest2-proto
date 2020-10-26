@@ -3,27 +3,25 @@ import styled from '@emotion/styled'
 
 type Props = {}
 
-const Header: FC<Props> = () => {
-  return (
-    <StyledHeader>
-      <HeaderLimitter>
-        <StyledH1>
-          <StyledA href='/'>あしたのベストNext</StyledA>
-        </StyledH1>
-        <StyledNav>
-          <StyledNavA href='/vests'>ベスト一覧</StyledNavA>
-          <StyledNavA href='/posts'>みんなの投稿</StyledNavA>
-          <StyledNavA
-            href='https://www.amazon.jp/hz/wishlist/ls/24ZYKIXEM3SQV?ref_=wl_share'
-            target='_blank'
-          >
-            応援する
-          </StyledNavA>
-        </StyledNav>
-      </HeaderLimitter>
-    </StyledHeader>
-  )
-}
+const Header: FC<Props> = () => (
+  <StyledHeader>
+    <HeaderLimitter>
+      <StyledH1>
+        <StyledA href='/'>あしたのベストNext</StyledA>
+      </StyledH1>
+      <StyledNav>
+        <StyledNavA href='/vests'>ベスト一覧</StyledNavA>
+        <StyledNavA href='/posts'>みんなの投稿</StyledNavA>
+        <StyledNavA
+          href='https://www.amazon.jp/hz/wishlist/ls/24ZYKIXEM3SQV?ref_=wl_share'
+          target='_blank'
+        >
+          応援する
+        </StyledNavA>
+      </StyledNav>
+    </HeaderLimitter>
+  </StyledHeader>
+)
 
 const StyledHeader = styled('header')`
   background-color: #17223b;

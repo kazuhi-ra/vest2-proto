@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import styled from '@emotion/styled'
 
 type Props = {
   src: string
@@ -16,10 +15,6 @@ const Image: FC<Props> = ({ src, imgHeight }) => {
     />
   )
 }
-
-const Img = styled('img')`
-  
-`
 
 export default React.memo(Image)
 // export default Image
