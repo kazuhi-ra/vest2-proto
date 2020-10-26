@@ -16,7 +16,6 @@ export type IntervalID = null | NodeJS.Timeout
 export type SetId = React.Dispatch<React.SetStateAction<IntervalID>>
 
 const Roulette = () => {
-  console.log('Roulette')
   const [head, setHead] = useState(0)
   const [vest, setVest] = useState(0)
   const [foot, setFoot] = useState(0)
@@ -110,7 +109,12 @@ const Roulette = () => {
         ) : (
           <>
             <OnceAgainButton start={start} isPlaying={isPlaying} />
-            <TwitterShareButton isPlaying={isPlaying} />
+            <TwitterShareButton
+              isPlaying={isPlaying}
+              head={head}
+              vest={vest}
+              foot={foot}
+            />
           </>
         )}
       </ButtonsWrapper>

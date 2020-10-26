@@ -16,7 +16,6 @@ const StopButton: FC<Props> = ({
   stop,
   isPlaying,
 }) => {
-  console.log('StopButton')
   return isPlaying && intervalId === null ? (
     <StopButtonInactive>STOP</StopButtonInactive>
   ) : (

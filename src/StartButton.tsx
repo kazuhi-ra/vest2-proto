@@ -7,7 +7,6 @@ type Props = {
 }
 
 const StartButton: FC<Props> = ({ start, isPlaying }) => {
-  console.log('StartButton')
   return !isPlaying ? (
     <StartButtonActive onClick={() => start()}>START</StartButtonActive>
   ) : (

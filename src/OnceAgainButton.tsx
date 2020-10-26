@@ -7,7 +7,6 @@ type Props = {
 }
 
 const OnceAgainButton: FC<Props> = ({ start, isPlaying }) => {
-  console.log('OnceAgainButton')
   return !isPlaying ? (
     <OnceAgainButtonActive onClick={() => start()}>
       もう一度
