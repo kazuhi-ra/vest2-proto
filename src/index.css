@@ -8,6 +8,10 @@ body {
 
   font-size: 30px;
   line-height: 6rem;
+
+  font-family: 'Helvetica Neue', Helvetica, Arial, '游ゴシック体', 'Yu Gothic',
+    YuGothic, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background-image: url(/images/renga2.png);
 }
 
 code {
@@ -15,7 +19,7 @@ code {
     monospace;
 }
 
-button{
+button {
   background-color: transparent;
   border: none;
   cursor: pointer;

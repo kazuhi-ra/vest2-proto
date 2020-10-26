@@ -122,7 +122,6 @@ const MainWrapper = styled('main')`
   width: 100%;
   padding-top: 30px;
   padding-bottom: 30px;
-  background-color: aliceblue;
 `
 
 const ButtonsWrapper = styled('div')`
