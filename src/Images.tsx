@@ -25,6 +25,7 @@ const ImageWrapper = styled('div')`
   align-items: center;
   background-color: #baba;
   width: 100%;
+  margin-bottom: 10px;
 `
 
 export default Images

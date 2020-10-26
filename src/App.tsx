@@ -108,10 +108,10 @@ const App = () => {
         {isFirstTime ? (
           <StartButton start={start} isPlaying={isPlaying} />
         ) : (
-          <div className='shareWrapper'>
+          <>
             <OnceAgainButton start={start} isPlaying={isPlaying} />
             <TwitterShareButton isPlaying={isPlaying} />
-          </div>
+          </>
         )}
       </ButtonsWrapper>
     </div>
