@@ -51,7 +51,7 @@ const StartButtonInactive = styled('button')`
   user-select: none;
   margin: 0 auto;
 
-  opacity: 0.7;
+  opacity: 0.85;
   pointer-events: none;
   cursor: default;
 `
